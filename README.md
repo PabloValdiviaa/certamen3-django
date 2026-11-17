@@ -80,10 +80,11 @@ del proyecto, y Django la lee desde ahí.
 
 ### 1. Crear la instancia EC2
 
-En la consola de AWS → EC2 → *Launch instance*:
+En la consola de AWS → EC2 → *Launch instance* (en **AWS Academy Learner Lab**, primero
+*Start Lab* y esperar el punto verde):
 
 - Imagen: **Ubuntu Server 24.04 LTS**. Tipo: **t2.micro** (capa gratuita).
-- *Key pair*: crear uno y guardar el archivo `.pem`.
+- *Key pair*: `vockey` en AWS Academy (o crear uno y guardar el archivo `.pem`).
 - *Security group*, reglas de entrada:
   - SSH, puerto 22, origen *Anywhere* (viene así por defecto; *EC2 Instance Connect* lo
     necesita porque se conecta desde los servidores de AWS).
@@ -134,7 +135,8 @@ nohup python manage.py runserver 0.0.0.0:8000 > servidor.log 2>&1 &
 
 `0.0.0.0` hace que Django acepte conexiones desde fuera de la instancia y `nohup` lo
 mantiene funcionando al cerrar la conexión. Si la instancia se reinicia, hay que repetir
-este paso (y actualizar `ALLOWED_HOSTS` si cambió la IP).
+este paso (y actualizar `ALLOWED_HOSTS` si cambió la IP). En AWS Academy la instancia se
+detiene al terminar la sesión del laboratorio y al volver a iniciarla cambia la IP pública.
 
 ### 6. Comprobar desde un navegador externo
 
