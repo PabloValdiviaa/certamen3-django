@@ -83,7 +83,7 @@ del proyecto, y Django la lee desde ahí.
 En la consola de AWS → EC2 → *Launch instance* (en **AWS Academy Learner Lab**, primero
 *Start Lab* y esperar el punto verde):
 
-- Imagen: **Ubuntu Server 24.04 LTS**. Tipo: **t2.micro** (capa gratuita).
+- Imagen: **Ubuntu Server 24.04 LTS**. Tipo: **t3.micro** o **t2.micro** (capa gratuita).
 - *Key pair*: `vockey` en AWS Academy (o crear uno y guardar el archivo `.pem`).
 - *Security group*, reglas de entrada:
   - SSH, puerto 22, origen *Anywhere* (viene así por defecto; *EC2 Instance Connect* lo
