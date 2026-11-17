@@ -16,7 +16,7 @@ del Certamen 2 (<https://github.com/Joba-13/Persentaciondjango>).
 
 | | Enlace |
 |---|---|
-| Dirección del sitio en AWS | **PENDIENTE:** `http://<IP-pública>:8000/alumnos/` |
+| Dirección del sitio en AWS | <http://3.89.32.242:8000/alumnos/> (AWS Academy: la IP cambia si se reinicia el laboratorio) |
 | Video 1: proceso de despliegue | **PENDIENTE** |
 | Video 2: presentación del software y explicación del código | **PENDIENTE** |
 
