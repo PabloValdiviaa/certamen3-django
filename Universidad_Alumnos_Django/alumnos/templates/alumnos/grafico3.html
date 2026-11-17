@@ -1,0 +1,16 @@
+{% extends 'alumnos/base.html' %}
+{% block titulo %}Alumnos por asignatura{% endblock %}
+{% block contenido %}
+    <h1 class="h3 mb-3">Horas de estudio y notas</h1>
+    <p>Cada punto representa las horas de estudio y la nota de un estudiante.</p>
+    <div class="card shadow-sm">
+        <div class="card-body text-center">
+            <img src="data:image/png;base64,{{ grafico }}"
+                class="img-fluid rounded"
+                alt="Cantidad de alumnos por asignatura">
+        </div>
+    </div>
+    <a class="btn btn-outline-primary mt-3" href="{% url 'alumnos:index' %}">
+        Volver a alumnos
+    </a>
+{% endblock %}

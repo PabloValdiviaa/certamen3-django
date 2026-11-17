@@ -1,0 +1,16 @@
+{% extends 'alumnos/base.html' %}
+{% block titulo %}Alumnos por asignatura{% endblock %}
+{% block contenido %}
+    <h1 class="h3 mb-3">Asistencia semanal al taller</h1>
+    <p>Observe la evolución de asistentes durante cinco semanas.</p>
+    <div class="card shadow-sm">
+        <div class="card-body text-center">
+            <img src="data:image/png;base64,{{ grafico }}"
+                class="img-fluid rounded"
+                alt="Cantidad de alumnos por asignatura">
+        </div>
+    </div>
+    <a class="btn btn-outline-primary mt-3" href="{% url 'alumnos:index' %}">
+        Volver a alumnos
+    </a>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "alumnos/base.html" %}
+
+{% block contenido %}
+<h1>{{ titulo }}</h1>
+<p>El gráfico compara cuántos trabajadores tienen estrés bajo, medio y alto en cada
+    modalidad de trabajo. Elija los filtros y presione «Actualizar».</p>
+<p class="text-muted">Eje X: modalidad de trabajo (remoto, híbrido, presencial) ·
+    Eje Y: cantidad de trabajadores · Color: nivel de estrés.</p>
+
+{% include "alumnos/filtros.html" %}
+
+{% if total > 0 %}
+    <p>Trabajadores en la selección: {{ total }}</p>
+    <div class="mx-auto" style="width: 70%; max-width: 1300px; height: 350px;">
+        <canvas id="grafico"></canvas>
+    </div>
+
+    {{ datos_grafico|json_script:"datos-grafico" }}
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const configuracion = JSON.parse(
+            document.getElementById("datos-grafico").textContent
+        );
+        configuracion.options = {
+        ...(configuracion.options || {}),
+        responsive: true,
+        maintainAspectRatio: false};
+
+        new Chart(document.getElementById("grafico"), configuracion);
+    </script>
+{% else %}
+    <div class="alert alert-warning">
+        No hay datos para la selección actual. Pruebe con otros filtros.
+    </div>
+{% endif %}
+
+<a class="btn btn-outline-primary mt-3" href="{% url 'alumnos:listadoEstresModalidad' %}?{{ request.GET.urlencode }}">
+    Ver reporte con estos filtros
+</a>
+<a class="btn btn-outline-primary mt-3" href="{% url 'alumnos:index' %}">
+    Volver a inicio
+</a>
+<a class="btn btn-outline-primary mt-3" href="{% url 'alumnos:pagina_graficos' %}">
+    Volver a graficos
+</a>
+{% endblock %}

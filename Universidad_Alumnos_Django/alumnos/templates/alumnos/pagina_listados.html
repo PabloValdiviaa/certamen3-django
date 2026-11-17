@@ -1,0 +1,47 @@
+{% extends "alumnos/base.html" %}
+
+{% block titulo %}Reportes{% endblock %}
+
+{% block contenido %}
+<h1>Reportes</h1>
+<p>Selecciona un reporte para consultar.</p>
+
+
+<div class="d-grid gap-3">
+    <a href="{% url 'alumnos:listadoIndustria' %}"
+        class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-primary">
+            <div class="card-body">
+                <h2 class="h4">Trabajadores por industria</h2>
+            </div>
+        </div>
+    </a>
+    <a href="{% url 'alumnos:listadoHorasEdad' %}"
+        class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-primary">
+            <div class="card-body">
+                <h2 class="h4">Horas trabajadas según edad</h2>
+            </div>
+        </div>
+    </a>
+    <a href="{% url 'alumnos:listadoEquilibrio' %}"
+        class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-primary">
+            <div class="card-body">
+                <h2 class="h4">Equilibrio entre vida y trabajo</h2>
+            </div>
+        </div>
+    </a>
+    <a href="{% url 'alumnos:listadoEstresModalidad' %}"
+        class="text-decoration-none text-dark">
+        <div class="card h-100 shadow-sm border-primary">
+            <div class="card-body">
+                <h2 class="h4">Nivel de estrés según modalidad de trabajo</h2>
+            </div>
+        </div>
+    </a>
+</div>
+<a class="btn btn-outline-primary mt-3" href="{% url 'alumnos:index' %}">
+    Volver a inicio
+</a>
+{% endblock %}

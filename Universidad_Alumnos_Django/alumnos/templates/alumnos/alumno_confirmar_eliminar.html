@@ -1,0 +1,15 @@
+{% extends 'alumnos/base.html' %}
+{% block titulo %}Eliminar alumno{% endblock %}
+{% block contenido %}
+<h1 class="h3 mb-3">Eliminar alumno</h1>
+<p>¿Desea eliminar a {{ alumno.nombres }} {{ alumno.apellido_paterno }}
+    con RUT {{ alumno.rut }}?</p>
+<p>La eliminación quitará este registro de la base de datos.</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Confirmar eliminación</button>
+    <a class="btn btn-outline-secondary" href="{% url 'alumnos:index' %}">
+        Cancelar
+    </a>
+</form>
+{% endblock %}

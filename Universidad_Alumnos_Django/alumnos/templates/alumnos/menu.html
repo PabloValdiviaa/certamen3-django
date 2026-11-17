@@ -1,0 +1,89 @@
+<header class="d-flex align-items-center gap-2 bg-white border-bottom px-3 py-2">
+    <button class="btn btn-sm btn-outline-secondary"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#menuLateral"
+            aria-controls="menuLateral"
+            aria-label="Abrir menú">
+        ☰
+    </button>
+
+    <a class="navbar-brand fw-semibold mb-0"
+       href="{% url 'alumnos:index' %}">
+        Proyecto
+    </a>
+</header>
+
+<div class="offcanvas offcanvas-start bg-white"
+     tabindex="-1"
+     id="menuLateral"
+     aria-labelledby="tituloMenu"
+     style="width: 260px;">
+
+    <div class="offcanvas-header border-bottom">
+        <a class="navbar-brand" href="{% url 'alumnos:index' %}">
+            Proyecto
+        </a>
+        <button type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Cerrar menú">
+        </button>
+    </div>
+
+    <div class="offcanvas-body">
+        <ul class="navbar-nav flex-column">
+
+            <li class="nav-item dropdown">
+                <button class="nav-link dropdown-toggle w-100 text-start"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                    Reportes
+                </button>
+                <ul class="dropdown-menu position-static w-100">
+                    <li><a class="dropdown-item" href="{% url 'alumnos:listadoIndustria' %}">
+                        Trabajadores por industria</a></li>
+                    <li><a class="dropdown-item" href="{% url 'alumnos:listadoHorasEdad' %}">
+                        Horas trabajadas según edad</a></li>
+                    <li><a class="dropdown-item" href="{% url 'alumnos:listadoEquilibrio' %}">
+                        Equilibrio entre vida y trabajo</a></li>
+                    <li><a class="dropdown-item" href="{% url 'alumnos:listadoEstresModalidad' %}">
+                        Nivel de estrés según modalidad</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+                <button class="nav-link dropdown-toggle w-100 text-start"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                    Gráficos
+                </button>
+                <ul class="dropdown-menu position-static w-100">
+                    <li>
+                        <a class="dropdown-item" href="{% url 'alumnos:graficoBarras' %}">
+                            Trabajadores por industria
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{% url 'alumnos:graficoLineas' %}">
+                            Horas semanales promedio según edad
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{% url 'alumnos:graficoDispersion' %}">
+                            Horas trabajadas y equilibrio vida-trabajo
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="{% url 'alumnos:graficoEstresModalidad' %}">
+                            Nivel de estrés según modalidad
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+</div>

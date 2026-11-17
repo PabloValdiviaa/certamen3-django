@@ -1,0 +1,37 @@
+{# Filtros del gráfico dinámico y del nuevo reporte. Se envían por GET a la misma página. #}
+<form method="get" class="card card-body mb-3">
+    <div class="row g-3">
+        <div class="col-md-3">
+            <label for="industria" class="form-label">Industria</label>
+            <select id="industria" name="industria" class="form-select">
+                <option value="">Todas</option>
+                {% for industria in industrias %}
+                    <option value="{{ industria }}" {% if industria == filtros.industria %}selected{% endif %}>{{ industria }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label for="region" class="form-label">Región</label>
+            <select id="region" name="region" class="form-select">
+                <option value="">Todas</option>
+                {% for region in regiones %}
+                    <option value="{{ region }}" {% if region == filtros.region %}selected{% endif %}>{{ region }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label for="edad_min" class="form-label">Edad mínima</label>
+            <input type="number" id="edad_min" name="edad_min" min="18" max="70"
+                   value="{{ filtros.edad_min }}" class="form-control">
+        </div>
+        <div class="col-md-3">
+            <label for="edad_max" class="form-label">Edad máxima</label>
+            <input type="number" id="edad_max" name="edad_max" min="18" max="70"
+                   value="{{ filtros.edad_max }}" class="form-control">
+        </div>
+    </div>
+    <div class="mt-3">
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <a class="btn btn-outline-secondary" href="{{ request.path }}">Limpiar filtros</a>
+    </div>
+</form>

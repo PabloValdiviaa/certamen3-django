@@ -1,0 +1,29 @@
+{% extends 'alumnos/base.html' %}
+{% block titulo %}{{ titulo }}{% endblock %}
+{% block contenido %}
+<h1 class="h3 mb-3">{{ titulo }}</h1>
+<p>Complete los datos. Ramo aprobado marcado significa Aprobado;
+    desmarcado significa Reprobado.</p>
+<form method="post" novalidate>
+    {% csrf_token %}
+    {% if form.non_field_errors %}
+        <div class="text-danger mb-3">{{ form.non_field_errors }}</div>
+    {% endif %}
+    {% for campo in form %}
+        <div class="mb-3">
+            {{ campo.label_tag }}
+            {{ campo }}
+            {% if campo.help_text %}
+                <div class="form-text">{{ campo.help_text }}</div>
+            {% endif %}
+            {% for error in campo.errors %}
+                <div class="text-danger">{{ error }}</div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a class="btn btn-outline-secondary" href="{% url 'alumnos:index' %}">
+        Cancelar
+    </a>
+</form>
+{% endblock %}

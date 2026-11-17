@@ -1,0 +1,33 @@
+{% extends "alumnos/base.html" %}
+
+{% block contenido %}
+<h1>{{ titulo }}</h1>
+<p>{{ explicacion }}</p>
+
+<div class="mx-auto" style="width: 70%; max-width: 1300px; height: 350px;">
+    <canvas id="grafico"></canvas>
+</div>
+
+{{ datos_grafico|json_script:"datos-grafico" }}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const configuracion = JSON.parse(
+        document.getElementById("datos-grafico").textContent
+    );
+    configuracion.options = {
+    ...(configuracion.options || {}),
+    responsive: true,
+    maintainAspectRatio: false};
+
+    new Chart(document.getElementById("grafico"), configuracion);
+
+    
+</script>
+<a class="btn btn-outline-primary mt-3" href="{% url 'alumnos:index' %}">
+    Volver a inicio
+</a>
+<a class="btn btn-outline-primary mt-3" href="{% url 'alumnos:pagina_graficos' %}">
+    Volver a graficos
+</a>
+{% endblock %}
