@@ -17,8 +17,8 @@ del Certamen 2 (<https://github.com/Joba-13/Persentaciondjango>).
 | | Enlace |
 |---|---|
 | Dirección del sitio en AWS | <http://3.89.32.242:8000/alumnos/> (AWS Academy: la IP cambia si se reinicia el laboratorio) |
-| Video 1: proceso de despliegue | **PENDIENTE** |
-| Video 2: presentación del software y explicación del código | **PENDIENTE** |
+| Video 1: proceso de despliegue | <https://github.com/PabloValdiviaa/certamen3-django/releases/download/videos-certamen3/Video1-Despliegue-AWS.mp4> |
+| Video 2: presentación del software y explicación del código | <https://github.com/PabloValdiviaa/certamen3-django/releases/download/videos-certamen3/Video2-Presentacion-software.mp4> |
 
 ## Cambios del Certamen 3
 
