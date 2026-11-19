@@ -20,6 +20,7 @@ del Certamen 2 (<https://github.com/Joba-13/Persentaciondjango>).
 | Video 1: proceso de despliegue | <https://github.com/PabloValdiviaa/certamen3-django/releases/download/videos-certamen3/Video1-Despliegue-AWS.mp4> |
 | Video 2: presentación del software y explicación del código | <https://github.com/PabloValdiviaa/certamen3-django/releases/download/videos-certamen3/Video2-Presentacion-software.mp4> |
 | Archivos `proyecto.rar` y `videoPresentación.rar` (respaldo) | <https://github.com/PabloValdiviaa/certamen3-django/releases/tag/entrega-certamen3> |
+| Videos 1 y 2 en Google Drive (respaldo) | <https://drive.google.com/drive/folders/1e8NpxMC4A0kiEUNYELZHDlcVNZ2KLW5h> |
 
 `proyecto.rar` contiene este README y la carpeta `Universidad_Alumnos_Django`.
 `videoPresentación.rar` contiene el video 1 y el video 2.
